@@ -172,7 +172,7 @@ if ($_POST['submit']){
     if (mysqli_query($bdd,$sql)){
         echo '<div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
         <span class="badge badge-pill badge-success">Success</span>
-        la categorie a ete ajoutee.
+        la categorie a ete suprimee.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">×</span>
             </button>
@@ -181,7 +181,7 @@ if ($_POST['submit']){
     else
     echo'<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
     <span class="badge badge-pill badge-success">echec</span>
-    Ajout echoue.
+    supression echoue.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
@@ -196,9 +196,25 @@ if ($_POST['submit']){
                             <div class="card-header"><strong>Cathgorie      </strong><small>Supression </small></div>
                             <form action="suprimer.php" method="POST">
                             <div class="card-body card-block">
-                            
-                                <div class="form-group"><label for="nom" class=" form-control-label">ID Categorie</label><input type="text" name="id" id="id" placeholder="Enter your company name" class="form-control"/>
-                                </div>
+                                <div class="row form-group">
+                                                                    <div class="col col-md-3"><label for="id" class=" form-control-label">Categorie</label></div>
+                                                                    <div class="col-12 col-md-9">
+                                                                        <select name="id" id="id" class="form-control">
+                                                                            <option value="">categorie (sous-categorie)</option>
+                                                                            <?php
+$query= 'select * from categorie';
+$data = mysqli_query($bdd,$query);
+while ($row_data = mysqli_fetch_array($data)){
+    $id = $row_data['idCategorie'];
+    $name = $row_data['nom'];
+    $subname = $row_data['nomSousCategorie'];
+    echo '<option value="'.$id.'">'.$name.' ('.$subname.')</option>';
+}
+
+?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
                             </div>
                             <div class="card-footer">
                                                         <input type="submit" name="submit" class="btn btn-primary btn-sm" value="delete">
