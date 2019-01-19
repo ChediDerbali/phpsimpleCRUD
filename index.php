@@ -49,83 +49,30 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Edit</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Categories</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">consulter</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">ajouter</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">suprimer</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">editer</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">chercher</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="cathegorie/consulter.php">consulter</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="cathegorie/ajouter.php">ajouter</a></li>
+                            <li><i class="fa fa-bars"></i><a href="cathegorie/suprimer.php">suprimer</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="cathegorie/editer.php">editer</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="cathegorie/chercher.php">chercher</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>produits</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">consulter</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">ajouter</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">suprimer</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">editer</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">chercher</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="produit/consulter.php">consulter</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="produit/ajouter.php">ajouter</a></li>
+                            <li><i class="fa fa-bars"></i><a href="produit/suprimer.php">suprimer</a></li>
+                            <li><i class="fa fa-share-square-o"></i><a href="produit/editer.php">editer</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="produit/chercher.php">chercher</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
-
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
+                 </div>   
         </nav>
     </aside><!-- /#left-panel -->
 
@@ -144,7 +91,7 @@
                     
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                     <div class="header-left">                        
-                    <h3>AAAAAAAAAAAAAAA</h3>
+                    <h3>Admin Space</h3>
 
                         
                     </div>
@@ -222,54 +169,28 @@
 
             
             <!--/.col-->
-
-            <div class="col-xl-3 col-lg-6">
-                <section class="card">
-                    <div class="twt-feed blue-bg">
-                        <div class="corner-ribon black-ribon">
-                            <i class="fa fa-facebook"></i>
-                        </div>
-                        <div class="fa fa-pintrest wtt-mark"></div>
-
-                        <div class="media">
-                            <a href="#">
-                                <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
-                            </a>
-                            <div class="media-body">
-                                <h2 class="text-white display-6">Jim Doe</h2>
-                                <p class="text-light">Project Manager</p>
+            <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fa fa-user"></i><strong class="card-title pl-2">Profile Card</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="mx-auto d-block">
+                                    <img class="rounded-circle mx-auto d-block" src="images/admin.jpg" alt="Card image cap">
+                                    <h5 class="text-sm-center mt-2 mb-1">Steven Lee</h5>
+                                    <div class="location text-sm-center"><i class="fa fa-map-marker"></i> California, United States</div>
+                                </div>
+                                <hr>
+                                <div class="card-text text-sm-center">
+                                    <a href="#"><i class="fa fa-facebook pr-1"></i></a>
+                                    <a href="#"><i class="fa fa-twitter pr-1"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="weather-category twt-category">
-                        <ul>
-                            <li class="active">
-                                <h5>750</h5>
-                                Tweets
-                            </li>
-                            <li>
-                                <h5>865</h5>
-                                Following
-                            </li>
-                            <li>
-                                <h5>3645</h5>
-                                Followers
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="twt-write col-sm-12">
-                        <textarea placeholder="Write your Tweet and Enter" rows="1" class="form-control t-text-area"></textarea>
-                    </div>
-                    <footer class="twt-footer">
-                        <a href="#"><i class="fa fa-camera"></i></a>
-                        <a href="#"><i class="fa fa-map-marker"></i></a>
-                        New Castle, UK
-                        <span class="pull-right">
-                            32
-                        </span>
-                    </footer>
-                </section>
-            </div>
+
 
 
             <div class="col-xl-3 col-lg-6">
@@ -278,7 +199,7 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Total Profit</div>
+                                <div class="stat-text">Nombre des Produits</div>
                                 <div class="stat-digit">1,012</div>
                             </div>
                         </div>
@@ -293,7 +214,7 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">New Customer</div>
+                                <div class="stat-text">Nombre des Categories</div>
                                 <div class="stat-digit">961</div>
                             </div>
                         </div>
@@ -307,24 +228,12 @@
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Active Projects</div>
+                                <div class="stat-text">Profit</div>
                                 <div class="stat-digit">770</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>World</h4>
-                    </div>
-                    <div class="Vector-map-js">
-                        <div id="vmap" class="vmap" style="height: 265px;"></div>
-                    </div>
-                </div>
-                <!-- /# card -->
             </div>
 
 
