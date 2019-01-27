@@ -163,40 +163,29 @@
 
             <div class="col-lg-12">
             <?php
-
+            error_reporting(0);
 include '../connection.php';
-$id1 = $_POST['id'];
-$name1 = $_POST['nom'];
-$subname1 = $_POST['sousnom'];
-$sqlname = "UPDATE `categorie` SET `nom`='$name1' WHERE `id`='$id1'";
-
-$sqlsubname = "UPDATE `categorie` SET `nomSousCategorie`='$subname1' WHERE `id`='$id1'";
-
-if ($_POST['submit']){
-    if ($name1 != ""){
-    if (mysqli_query($bdd,$sqlname)){
-        echo '<div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-        <span class="badge badge-pill badge-success">Success</span>
-        la categorie a ete ajoutee.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-    </div>';
-    }
-    else
-    echo'<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
-    <span class="badge badge-pill badge-danger">echec</span>
-    Ajout echoue.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-</div>';
+$id = $_POST['id'];
+$nom = $_POST['nom'];
+$nsc= $_POST['sousnom'];
+$sql = "UPDATE categorie SET";
+if ($nom!=""){
+$sql= $sql. " nom='$nom'";
+if ($nsc != ""){
+    $sql = $sql. " , nomSousCategorie='$nsc'";
 }
-if ($subname1 != ""){
-    if (mysqli_query($bdd,$sqlsubname)){
+}
+else{
+if ($nsc != ""){
+    $sql = $sql. " nomSousCategorie='$nsc'";
+}
+}
+$sql= $sql." where idCategorie='$id'";
+if ($_POST['submit']){
+    if (mysqli_query($bdd,$sql)){
         echo '<div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
         <span class="badge badge-pill badge-success">Success</span>
-        la categorie a ete ajoutee.
+        la categorie a ete suprimee. 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">×</span>
             </button>
@@ -205,21 +194,73 @@ if ($subname1 != ""){
     else
     echo'<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
     <span class="badge badge-pill badge-success">echec</span>
-    Ajout echoue.
+    supression echoue. '.$id.$nom.$nsc.$sql.'
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
 </div>';
-}}
+}
 
 ?>
-<div class="card">
-                    <div class="card-header">
-                        <i class="mr-2 fa fa-align-justify"></i>
-                        <strong class="card-title" v-if="headerText">Modals</strong>
-                    </div>
-                    <div class="card-body">
-                     <table class="table">
+            </div>
+            <!--/.col-->
+            <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header"><strong>Cathgorie      </strong><small>Supression </small></div>
+                            <form action="editer.php" method="POST">
+                            <div class="card-body card-block">
+                                <div class="row form-group">
+                                                                    <div class="col col-md-3"><label for="id" class=" form-control-label">Categorie</label></div>
+                                                                    <div class="col-12 col-md-9">
+                                                                        <select name="id" id="id" class="form-control">
+                                                                            <option value="">categorie (sous-categorie)</option>
+                                                                            <?php
+$query= 'select * from categorie';
+$data = mysqli_query($bdd,$query);
+while ($row_data = mysqli_fetch_array($data)){
+    $id = $row_data['idCategorie'];
+    $name = $row_data['nom'];
+    $subname = $row_data['nomSousCategorie'];
+    echo '<option value="'.$id.'">'.$name.' ('.$subname.')</option>';
+}
+
+?>
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group"><label for="nom" class=" form-control-label">Nom Categorie</label><input type="text" name="nom" id="nom" placeholder="Enter your company name" class="form-control"/>
+                                </div>
+                                <div class="form-group"><label for="sousnom" class=" form-control-label">Sous-Nom Categorie</label><textarea name="sousnom" id="sousnom" rows="9" placeholder="Content..." class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            
+                              
+                                
+                                
+                            <div class="card-footer">
+                                                        <input type="submit" name="submit" class="btn btn-primary btn-sm" value="delete">
+                                                            
+                                                        <button type="reset" class="btn btn-danger btn-sm">
+                                                            <i class="fa fa-ban"></i> Reset
+                                                        </button>
+                                                    </div>
+                                                    </form>
+
+
+
+            
+
+
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header"><strong>Cathgorie      </strong><small>Table Des elements </small></div>
+                            <div class="card-body">
+                                <table class="table">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th scope="col">#</th>
@@ -242,74 +283,16 @@ while ($row_data = mysqli_fetch_array($data)){
 ?>
                                     </tbody>
                                 </table>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#scrollmodal">
-                            edit
-                        </button>
-                    </div>
-                </div>
-            </div>
+
+                            </div>
 
 
-            <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" style="display: none;" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="scrollmodalLabel">Scrolling Long Content Modal</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            <form action="editer.php" method="POST">
 
-                            <div class="row form-group">
-                                                                    <div class="col col-md-3"><label for="id" class=" form-control-label">Categorie</label></div>
-                                                                    <div class="col-12 col-md-9">
-                                                                        <select name="id" id="id" class="form-control">
-                                                                            <option value="">categorie (sous-categorie)</option>
-                                                                            <?php
-$query= 'select * from categorie';
-$data = mysqli_query($bdd,$query);
-while ($row_data = mysqli_fetch_array($data)){
-    $id = $row_data['idCategorie'];
-    $name = $row_data['nom'];
-    $subname = $row_data['nomSousCategorie'];
-    echo '<option value="'.$id.'">'.$name.' ('.$subname.')</option>';
-}
-
-?>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                            
-                            
-                                <div class="form-group"><label for="nom" class=" form-control-label">Nom Categorie</label><input type="text" name="nom" id="nom" placeholder="Enter your company name" class="form-control"/>
-                                </div>
-                                <div class="form-group"><label for="sousnom" class=" form-control-label">Sous-Nom Categorie</label><textarea name="sousnom" id="sousnom" rows="9" placeholder="Content..." class="form-control"></textarea>
-                                </div>
-                                
-                                
-                            </div>
-                            <div class="card-footer">
-                                                        
-                            </div>
-                            <div class="modal-footer">
-                            <input type="submit" name="submit" class="btn btn-primary btn-sm" value="submit">
-                                                            
-                                                            <button type="reset" class="btn btn-danger btn-sm">
-                                                                <i class="fa fa-ban"></i> Reset
-                                                            </button>
-                                                        
-                                                        </form>
-                                                        </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!--/.col-->
             
 
+
+        </div> <!-- .content -->
+    </div><!-- /#right-panel -->
     <!-- Right Panel -->
 
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
